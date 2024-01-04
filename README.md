@@ -1,4 +1,4 @@
-# Phonetic Sino Ideographs&mdash;a font generator that converts Chinese characters in a font into their phonographemes 
+# Phonetic Sino Ideographs&mdash;a font generator that converts Chinese characters into their phonographemes 
 
 ## What is a phonographeme? 
 
