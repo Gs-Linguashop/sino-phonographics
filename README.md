@@ -20,7 +20,7 @@ This project does exact that by making a font to render digitized Chinese texts 
 
 ## Why write Chinese in phonographemes? 
 
-Writing with only phonographemes has the following perks (and one can always return to an old-school character if needed): 
+Writing with only phonographemes has the following perks (and one can always return to an old-school character if needed to): 
 * characters are less dense and simpler to write; 
 * the total set of characters in regular use can be reduced to ~1000, compared to 3000 to 5000 usually needed to understand most modern texts; 
 * it better fits the large amount of bi- and multi-syllabic vocabulary of modern Chinese in the sense that it retains just enough information, throws away the unnecessary, and eats less entropy than the contemporary Chinese writing systems; 
