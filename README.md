@@ -1,4 +1,4 @@
-# Phonetic Sino Ideographs&mdash;a font generator that converts Chinese characters into their phonographemes 
+# Sino Phonographics: convert Chinese characters into their *Phonographemes* &mdash; in a font 
 
 ## What is a phonographeme? 
 
@@ -16,7 +16,7 @@ In modern Chinese language, many syllables from the ancient time merge into same
 
 Indeed, it is possible to throw away the semantic components of phono-semantic characters and leave only the phonographeme in modern Chinese writings. One can still understand the text! 
 
-This project does exact that. Modify the input/output font paths in main.py and convert any font to get a phonographic font. The converted font shows only the phonographemes of digitized characters. 
+This project does exact that by making a font to render digitized Chinese texts with phonographemes. Modify the input/output font paths in main.py and convert any font into a phonographic font. The converted font shows only the phonographemes of digitized characters. 
 
 ## Why write Chinese in phonographemes? 
 
@@ -24,7 +24,7 @@ Writing with only phonographemes has the following perks (and one can always ret
 * characters are less dense and simpler to write; 
 * the total set of characters in regular use can be reduced to ~1000, compared to 3000 to 5000 usually needed to understand most modern texts; 
 * it better fits the large amount of bi- and multi-syllabic vocabulary of modern Chinese in the sense that it retains just enough information, throws away the unnecessary, and eats less entropy than the contemporary Chinese writing systems; 
-* it emphasizes the phonetic aspect of most characters&mdash;those used to be phono-semantic anyway. 
+* it emphasizes the phonetic aspect of most characters &mdash; those used to be phono-semantic anyway. 
 
 The idea of writing Chinese with only phonographeme aligns with the historic development of alphabets. Usually, an original writing system is created as ideographs. Then, a foreign language borrows some of the ideographs to represent their corresponding concepts, while others to represent sounds of their language. Finally, further developments or yet another borrowing of the writing system discards the ideographic part completely. 
 
