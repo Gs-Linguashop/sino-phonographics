@@ -1,0 +1,1 @@
+The fonts in this sub-directory are or are modified from [source-han-sans](https://github.com/adobe-fonts/source-han-sans) by adobe-fonts. 
