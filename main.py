@@ -47,13 +47,13 @@ pre_assigned_dict = read_dict(src_dir + 'exception_chars.txt')
 morph_dict = read_morphs('phonographeme_dict.txt',pre_assigned_dict)
 
 font_path = font_dir + 'SourceHanSansTC-Regular.otf' #
-font_output = font_dir + 'SourceHanSans-Phonetic-Minimal.ttf' # SourceHanSans-Phonetic.ttf SourceHanSans-Phonetic-Minimal.ttf
+font_output = font_dir + 'SourceHanSans-Phonetic-Custom.ttf' # SourceHanSans-Phonetic.ttf SourceHanSans-Phonetic-Minimal.ttf
 
 font = ttLib.TTFont(font_path)
 
 mod_dict_keys(morph_dict,read_dict(src_dir + 'rare_PhGs.txt'))
 
-morph_sub_dict = read_dict(src_dir + 'display_mod(minimal).txt',delim='\t')
+morph_sub_dict = read_dict(src_dir + 'display_mod(custom).txt',delim='\t')
 
 # convert morph to simplified
 # for morph in morph_dict.copy():
