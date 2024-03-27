@@ -41,13 +41,13 @@ def read_morphs(file_name,pre_assigned_dict): # traditional morphs
 # 3. replace unwanted morphs then merge secondary morphs
 # 4. modify the font file and sub with desired displayed form
 # 5. save font and delete excessive glyphs
-font_dir = 'SourceHan/'; src_dir = 'src/'; log_dir = 'log/'
+font_dir = 'SourceHan/'; src_dir = 'src(simp)/'; log_dir = 'log/'
 
 pre_assigned_dict = read_dict(src_dir + 'exception_chars.txt')
 morph_dict = read_morphs('phonographeme_dict.txt',pre_assigned_dict)
 
-font_path = font_dir + 'SourceHanSansTC-Regular.otf' #
-font_output = font_dir + 'SourceHanSans-Phonetic-Custom.ttf' # SourceHanSans-Phonetic.ttf SourceHanSans-Phonetic-Minimal.ttf
+font_path = font_dir + 'SourceHanSansStr-Regular.ttf' # SourceHanSansStr-Regular.otf
+font_output = font_dir + 'SourceHanSans-Phonetic.ttf' # 
 
 font = ttLib.TTFont(font_path)
 
@@ -66,20 +66,25 @@ for morph, chars in morph_dict.items():
     for char in chars:
         if ord(char) >= 16**4: chars.remove(char); print('char ' + char + ' overflow and deleted')
 
+n = 0; ncap = 100000; q = ''
 glyphs_to_include = set(font.getGlyphOrder()); glyphs_morphs = set(); missing_morph = set()
 all_chars = set(); all_morph_glyphs = set()
 for cmap,ori_cmap in zip(font['cmap'].tables,copy.deepcopy(font['cmap'].tables)):
-    if ord('一') not in ori_cmap.cmap: continue # not a chinese ideograph cmap
+    if not ((cmap.platformID,cmap.platEncID) == (0,4) or (cmap.platformID,cmap.platEncID) == (3,10)): continue
     for morph, chars in morph_dict.items():
-        if ord(morph) not in ori_cmap.cmap: missing_morph.add(morph); continue
         ord_morph = ord(morph)
         for sub_morph in morph_sub_dict.get(morph,[]): # sub can have multiple choices
             if ord(sub_morph) in ori_cmap.cmap: ord_morph = ord(sub_morph); break
+        if ord_morph not in ori_cmap.cmap: missing_morph.add(chr(ord_morph)); continue
         glyphs_morphs.add(ori_cmap.cmap[ord_morph])
         for char in chars:
             glyphs_to_include.discard(ori_cmap.cmap.get(ord(char)))
             cmap.cmap[ord(char)] = ori_cmap.cmap[ord_morph]
             all_chars.add(char); all_morph_glyphs.add(chr(ord_morph))
+            n += 1; q = morph
+            if n > ncap: break
+            print(char)
+        if n > ncap: break
 glyphs_to_include.update(glyphs_morphs)
 
 glyphs_to_include_file_name = log_dir + 'glyphs_to_include.txt'
