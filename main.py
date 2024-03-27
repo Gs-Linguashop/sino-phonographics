@@ -66,7 +66,6 @@ for morph, chars in morph_dict.items():
     for char in chars:
         if ord(char) >= 16**4: chars.remove(char); print('char ' + char + ' overflow and deleted')
 
-n = 0; ncap = 100000; q = ''
 glyphs_to_include = set(font.getGlyphOrder()); glyphs_morphs = set(); missing_morph = set()
 all_chars = set(); all_morph_glyphs = set()
 for cmap,ori_cmap in zip(font['cmap'].tables,copy.deepcopy(font['cmap'].tables)):
@@ -81,10 +80,6 @@ for cmap,ori_cmap in zip(font['cmap'].tables,copy.deepcopy(font['cmap'].tables))
             glyphs_to_include.discard(ori_cmap.cmap.get(ord(char)))
             cmap.cmap[ord(char)] = ori_cmap.cmap[ord_morph]
             all_chars.add(char); all_morph_glyphs.add(chr(ord_morph))
-            n += 1; q = morph
-            if n > ncap: break
-            print(char)
-        if n > ncap: break
 glyphs_to_include.update(glyphs_morphs)
 
 glyphs_to_include_file_name = log_dir + 'glyphs_to_include.txt'
