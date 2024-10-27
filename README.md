@@ -1,5 +1,7 @@
 # Sino Phonographics: convert Chinese characters into their *Phonographemes* &mdash; in a font 
 
+點擊[這裏](Exposition.md)查看一篇中文的表演性闡述。Check out [here](Exposition.md) for a performative exposition in Chinese. 
+
 ## What is a phonographeme? 
 
 A phonographeme is a component in Chinese writing system that governs the pronunciation aspect of a character. 
@@ -17,6 +19,8 @@ In modern Chinese language, many syllables from the ancient time merge into same
 Indeed, it is possible to throw away the semantic components of phono-semantic characters and leave only the phonographeme in modern Chinese writings. One can still understand the text! 
 
 This project does exact that by making a font to render digitized Chinese texts with phonographemes. Modify the input/output font paths in main.py and convert any font into a phonographic font. The converted font shows only the phonographemes of digitized characters. 
+
+An example is available [here](SourceHan/README.md). 
 
 ## Why write Chinese in phonographemes? 
 
