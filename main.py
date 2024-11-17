@@ -41,7 +41,7 @@ def read_morphs(file_name,pre_assigned_dict): # traditional morphs
 # 3. replace unwanted morphs then merge secondary morphs
 # 4. modify the font file and sub with desired displayed form
 # 5. save font and delete excessive glyphs
-font_dir = 'SourceHan/'; src_dir = 'src(simp)/'; log_dir = 'log/'
+font_dir = 'SourceHan/'; src_dir = 'src(traditional)/'; log_dir = 'log/'
 
 pre_assigned_dict = read_dict(src_dir + 'exception_chars.txt')
 morph_dict = read_morphs('phonographeme_dict.txt',pre_assigned_dict)
