@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uniFE3B" format="2">
+  <advance width="1000" height="1000"/>
+  <unicode hex="FE3B"/>
+  <outline>
+    <contour>
+      <point x="645" y="112"/>
+      <point x="500" y="112" type="qcurve" smooth="yes"/>
+      <point x="355" y="112"/>
+      <point x="112" y="1"/>
+      <point x="39" y="-86" type="qcurve"/>
+      <point x="34" y="-86" type="line"/>
+      <point x="34" y="214" type="line"/>
+      <point x="966" y="214" type="line"/>
+      <point x="966" y="-86" type="line"/>
+      <point x="961" y="-86" type="line"/>
+      <point x="888" y="1"/>
+    </contour>
+  </outline>
+</glyph>
