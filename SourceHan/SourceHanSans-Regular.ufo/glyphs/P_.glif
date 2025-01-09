@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="P" format="2">
+  <advance width="633" height="633"/>
+  <unicode hex="0050"/>
+  <outline>
+    <contour>
+      <point x="584" y="632"/>
+      <point x="584" y="518" type="qcurve" smooth="yes"/>
+      <point x="584" y="405"/>
+      <point x="439" y="292"/>
+      <point x="314" y="292" type="qcurve" smooth="yes"/>
+      <point x="193" y="292" type="line"/>
+      <point x="193" y="0" type="line"/>
+      <point x="101" y="0" type="line"/>
+      <point x="101" y="733" type="line"/>
+      <point x="310" y="733" type="line" smooth="yes"/>
+      <point x="441" y="733"/>
+    </contour>
+    <contour>
+      <point x="492" y="440"/>
+      <point x="492" y="518" type="qcurve" smooth="yes"/>
+      <point x="492" y="596"/>
+      <point x="399" y="658"/>
+      <point x="298" y="658" type="qcurve" smooth="yes"/>
+      <point x="193" y="658" type="line"/>
+      <point x="193" y="367" type="line"/>
+      <point x="302" y="367" type="line" smooth="yes"/>
+      <point x="399" y="367"/>
+    </contour>
+  </outline>
+</glyph>

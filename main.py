@@ -2,6 +2,10 @@ import sys
 import subprocess
 from fontTools import ttLib
 import copy
+import shutil
+import os
+from defcon import Font
+from ufo2ft import compileOTF
 
 class Char:
     def __init__(self, name, type = None, parent_name = None, parent_type = None):
@@ -92,7 +96,9 @@ def read_subs(file_name):
 # Main
 font_dir = 'SourceHan/'; src_dir = 'src/'; log_dir = 'log/'
 
-font_path = font_dir + 'SourceHanSans-Regular.ttf' 
+font_path = font_dir + 'SourceHanSans-Regular.ufo' 
+font_sup_path = font_dir + 'SourceHanSansSup-Regular.ufo' 
+font_combined_path = font_dir + 'temp.ufo' 
 font_output = font_dir + 'SourceHanSansPhonetic-Regular.ttf' 
 
 forest =  Forest()
@@ -106,19 +112,43 @@ not_displayed_chars = Forest()
 read_dict(src_dir + 'phonograph_not_displayed.txt', not_displayed_chars, None, mode = 'init')
 subs = read_subs(src_dir + 'phonograph_display_subs.txt')
 
-font = ttLib.TTFont(font_path)
+shutil.copytree(font_path, font_combined_path, dirs_exist_ok = True)
+source_dir = font_sup_path + "/glyphs"
+destination_dir = font_combined_path + "/glyphs"
+
+# Iterate over all files in the source directory
+for filename in os.listdir(source_dir):
+    if filename == 'contents.plist': continue
+    source_file = os.path.join(source_dir, filename)
+
+    # Check if the item is a file (not a directory)
+    if os.path.isfile(source_file):
+        destination_file = os.path.join(destination_dir, filename)
+        shutil.copy(source_file, destination_file)
+
+with (open(font_combined_path + "/glyphs/contents.plist","r",encoding="utf8") as f, 
+      open(font_sup_path + "/glyphs/contents.plist","r",encoding="utf8") as g):
+    combined_contents = f.read().partition('  </dict>')[0] + g.read().partition('  <dict>\n')[2]
+with open(font_combined_path + "/glyphs/contents.plist","w",encoding="utf8") as f:
+    f.write(combined_contents)
+
+ufo = Font(font_combined_path)
+font = compileOTF(ufo)
+
+# font = ttLib.TTFont(font_path)
 
 all_accounted_chars = set(); all_displayed_chars = set(); missing_glyphs = set()
 # glyph_labels_to_include = set(font.getGlyphOrder()); glyph_labels_sub_to = set()
+best_cmap = font.getBestCmap()
 for cmap,ori_cmap in zip(font['cmap'].tables,copy.deepcopy(font['cmap'].tables)):
-    if (cmap.platformID,cmap.platEncID) in [(0,3), (3,1)]: is_BMP = True
+    if (cmap.platformID,cmap.platEncID) in [(0,3), (3,1)]: is_BMP = False # True
     elif (cmap.platformID,cmap.platEncID) in [(0,4), (0,6), (3,10)]: is_BMP = False
     else: continue
     for char_ord in ori_cmap.cmap:
         char = chr(char_ord)
         if char not in forest.dict: continue
         if char is None or forest.dict[char].type != 'reg': continue
-        map_to_char_and_glyph = forest.dict[char].find_substitution_glyph(forest, displayed_chars.dict, not_displayed_chars.dict, subs, ori_cmap.cmap.get, missing_glyphs, is_BMP)
+        map_to_char_and_glyph = forest.dict[char].find_substitution_glyph(forest, displayed_chars.dict, not_displayed_chars.dict, subs, best_cmap.get, missing_glyphs, is_BMP)
         if map_to_char_and_glyph is None: continue
         map_to_char, cmap.cmap[char_ord] = map_to_char_and_glyph
         all_accounted_chars.add(char); all_displayed_chars.add(map_to_char)
@@ -154,4 +184,5 @@ with open(glyphs_to_include_file_name,"w",encoding="utf8") as f:
     f.write(','.join(sorted(glyph_labels_to_include)))
 
 subprocess.run('pyftsubset ' + font_output + ' --output-file=' + font_output + ' --glyphs-file=' + glyphs_to_include_file_name, shell=True) # may not work, try changing the format of the input file 
+shutil.rmtree(font_combined_path)
 print('done')

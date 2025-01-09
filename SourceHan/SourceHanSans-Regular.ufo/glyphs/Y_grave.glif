@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ygrave" format="2">
+  <advance width="531" height="531"/>
+  <unicode hex="1EF2"/>
+  <outline>
+    <contour>
+      <point x="-1" y="733" type="line"/>
+      <point x="97" y="733" type="line"/>
+      <point x="192" y="526" type="line"/>
+      <point x="213" y="479" type="line" smooth="yes"/>
+      <point x="230" y="439"/>
+      <point x="264" y="365" type="qcurve"/>
+      <point x="268" y="365" type="line"/>
+      <point x="274" y="379"/>
+      <point x="278" y="385" type="qcurve" smooth="yes"/>
+      <point x="334" y="507"/>
+      <point x="342" y="526" type="qcurve" smooth="yes"/>
+      <point x="436" y="733" type="line"/>
+      <point x="532" y="733" type="line"/>
+      <point x="311" y="284" type="line"/>
+      <point x="311" y="0" type="line"/>
+      <point x="219" y="0" type="line"/>
+      <point x="219" y="284" type="line"/>
+    </contour>
+    <contour>
+      <point x="168" y="970" type="line"/>
+      <point x="325" y="825" type="line"/>
+      <point x="284" y="779" type="line"/>
+      <point x="115" y="907" type="line"/>
+    </contour>
+  </outline>
+</glyph>
