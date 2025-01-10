@@ -8,8 +8,13 @@
     <false/>
     <key>com.schriftgestaltung.formatVersion</key>
     <integer>3</integer>
-    <key>com.schriftgestaltung.useGlyphOrder</key>
-    <true/>
+    <key>com.schriftgestaltung.glyphOrder</key>
+    <array>
+      <string>u200D3</string>
+      <string>u20B24</string>
+      <string>u226A9</string>
+      <string>u27DD7</string>
+    </array>
     <key>com.schriftgestaltung.useNiceNames</key>
     <false/>
     <key>public.glyphOrder</key>
@@ -18,6 +23,9 @@
       <string>u20B24</string>
       <string>u226A9</string>
       <string>u27DD7</string>
+      <string>u22016</string>
+      <string>u2B823</string>
+      <string>u3005C</string>
     </array>
   </dict>
 </plist>

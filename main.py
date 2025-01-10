@@ -200,21 +200,5 @@ with open(log_dir + 'chars_displayed.txt',"w",encoding="utf8") as f:
 print('compiling ufo to ttf/otf')
 font = compileTTF(ufo)
 font.save(font_output)
-
-'''
-print('font saved, deleting excessive glyphs')
-
-font = ttLib.TTFont(font_output)
-glyph_labels_to_include = set()
-for cmap in font['cmap'].tables:
-    for char_ord in cmap.cmap:
-        glyph_labels_to_include.add(cmap.cmap[char_ord])
-
-glyphs_to_include_file_name = log_dir + 'glyph_labels_to_include.txt'
-with open(glyphs_to_include_file_name,"w",encoding="utf8") as f:
-    f.write(','.join(sorted(glyph_labels_to_include)))
-
-subprocess.run('pyftsubset ' + font_output + ' --output-file=' + font_output + ' --glyphs-file=' + glyphs_to_include_file_name, shell=True) # may not work, try changing the format of the input file 
-'''
 print('font saved')
 print('done')
