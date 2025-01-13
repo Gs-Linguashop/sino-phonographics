@@ -24,7 +24,8 @@ class Char:
         self.parent_type = parent_type # 'phonetic' 'dummy' 'reduced' 'alternative'
 
     def set_parent(self, parent_name, parent_type):
-        self.parent_name = parent_name
+        if self.parent_name == parent_name: self.parent_name = None
+        else: self.parent_name = parent_name
         self.parent_type = parent_type
 
     def find_substitution_glyph(self, forest, displayed_chars, not_displayed_chars, display_subs, get_glyph_code, missing_glyphs, is_BMP):
