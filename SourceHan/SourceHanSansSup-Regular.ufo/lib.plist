@@ -2,12 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
-    <key>com.schriftgestaltung.DisplayStrings</key>
-    <array>
-      <string>𰕎</string>
-    </array>
     <key>com.schriftgestaltung.appVersion</key>
-    <string>3260</string>
+    <string>3337</string>
     <key>com.schriftgestaltung.disablesAutomaticAlignment</key>
     <false/>
     <key>com.schriftgestaltung.formatVersion</key>
@@ -33,8 +29,14 @@
       <string>u20BD1</string>
       <string>u21569</string>
       <string>u22016</string>
+      <string>u22EFB</string>
+      <string>u22F38</string>
+      <string>u23386</string>
       <string>u239BC</string>
+      <string>u23D92</string>
       <string>u24C07</string>
+      <string>u26407</string>
+      <string>u27BAB</string>
       <string>u27D2A</string>
       <string>u27DD7.alt</string>
       <string>u2B823</string>
