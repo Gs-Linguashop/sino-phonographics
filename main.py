@@ -30,7 +30,6 @@ class Char:
 
     def find_substitution_glyph(self, forest, displayed_chars, not_displayed_chars, display_subs, get_glyph_code, missing_glyphs, is_BMP):
         # get glyph code takes a char's ord as input and returns the glyph's name 
-        # print('processing ' + self.name)
         if self.parent_name == None or self.parent_name in not_displayed_chars or self.name in displayed_chars: 
             return self.get_glyph(display_subs.get(self.name,[]), get_glyph_code, missing_glyphs, is_BMP)
         else: 
@@ -45,12 +44,9 @@ class Char:
         for char_name in [*sub_list, *add_to_sub_list]:
             if len(char_name) > 1: raise Exception("Invalid Substitution Char: " + char_name)
             glyph_code = get_glyph_code(ord(char_name))
-            # print(char_name,ord_to_hex(ord(char_name)),glyph_code)
-            # sys.exit(glyph_code)
             if glyph_code is None: 
                 if is_BMP is False or ord(char_name) < 16 ** 4: missing_glyphs.add(char_name)
             else: 
-                # sys.exit(char_name)
                 return char_name, glyph_code
         return None
 
@@ -136,28 +132,9 @@ for glyph in ufo_sup:
             if unicode not in glyph.unicodes: glyph.unicodes.append(unicode)
     ufo.insertGlyph(glyph, name=None)
 
-'''
-print('copying unicode data')
-unicodeData_copy = copy.deepcopy(ufo.unicodeData)
-'''
-
 print('substituting glyph maps')
-
+ 
 all_accounted_chars = set(); all_displayed_chars = set(); missing_glyphs = set()
-
-def ord_to_hex(i):
-    if i < 16 ** 4: return format(i, '04x').upper()
-    else: return format(i, '05x').upper()
-
-'''
-def find_glyph_name_from_char_ord(i):
-    return ufo.unicodeData.glyphNameForUnicode(ord_to_hex(i))
-
-
-print(ufo.unicodeData.glyphNameForUnicode(ord('a')))
-sys.exit()
-'''
-
 for char in forest.dict:
     if char is None or forest.dict[char].type != 'reg': continue
     map_to_char_and_glyph = forest.dict[char].find_substitution_glyph(forest, displayed_chars.dict, not_displayed_chars.dict, subs, ufo.unicodeData.glyphNameForUnicode, missing_glyphs, False) # is_BMP)
@@ -171,22 +148,15 @@ for char in forest.dict:
         map_to_glyph_name_unicodes = ufo[map_to_glyph_name].unicodes
         map_to_glyph_name_unicodes.append(ord(char))
         ufo[map_to_glyph_name].unicodes = map_to_glyph_name_unicodes
-        '''
-        print(type(ufo[map_to_glyph_name].unicodes))
-        print(ord(char))
-        print(original_glyph_name,map_to_glyph_name)
-        print(int(original_glyph_name[3:],16),int(map_to_glyph_name[3:],16))
-        print(ufo[original_glyph_name].unicodes)
-        print(ufo[map_to_glyph_name].unicodes)
-        sys.exit()
-        '''
     all_accounted_chars.add(char); all_displayed_chars.add(map_to_char)
 
-print('deleting unused glyphs')
+print('gathering unused glyphs')
 with open(font_path + '/features.fea',"r",encoding="utf8") as f: features = f.read()
 glyphs_to_delete = set()
 for glyph in ufo:
     if len(glyph.unicodes) == 0 and glyph.name not in features: glyphs_to_delete.add(glyph.name)
+
+print('deleting unused glyphs')
 for glyph_name in glyphs_to_delete:
     del ufo[glyph_name]
 
