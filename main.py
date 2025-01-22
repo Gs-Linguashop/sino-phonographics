@@ -8,6 +8,9 @@ from defcon import Font
 from ufo2ft import compileTTF
 from ufo2ft import compileOTF
 
+# TODO: delete is_BMP functionalities 
+# TODO: double check all documented files again 
+
 # this script processes sources files in ufo 
 # to process ttf/otf, see mainttfotf.py 
 
@@ -24,7 +27,7 @@ class Char:
         self.parent_type = parent_type # 'phonetic' 'dummy' 'reduced' 'alternative'
 
     def set_parent(self, parent_name, parent_type):
-        if self.parent_name == parent_name: self.parent_name = None
+        if self.name == parent_name: self.parent_name = None
         else: self.parent_name = parent_name
         self.parent_type = parent_type
 
@@ -47,7 +50,7 @@ class Char:
             if glyph_code is None: 
                 if is_BMP is False or ord(char_name) < 16 ** 4: missing_glyphs.add(char_name)
             else: 
-                return char_name, glyph_code
+                return char_name, glyph_code, self.name
         return None
 
 class Forest:
@@ -115,10 +118,8 @@ read_dict(src_dir + 'phonograph_dict.txt', forest, dup_chars, mode = 'init')
 read_dict(src_dir + 'phonograph_rare.txt', forest, dup_chars, mode = 'init')
 read_dict(src_dir + 'phonograph_hierarchy.txt', forest, dup_chars, mode = 'mod')
 read_dict(src_dir + 'phonograph_relation_mod.txt', forest, dup_chars, mode = 'mod')
-displayed_chars = Forest()
-read_dict(src_dir + 'phonograph_displayed.txt', displayed_chars, None, mode = 'init')
-not_displayed_chars = Forest()
-read_dict(src_dir + 'phonograph_not_displayed.txt', not_displayed_chars, None, mode = 'init')
+displayed_chars = Forest(); read_dict(src_dir + 'phonograph_displayed.txt', displayed_chars, None, mode = 'init')
+not_displayed_chars = Forest(); read_dict(src_dir + 'phonograph_not_displayed.txt', not_displayed_chars, None, mode = 'init')
 subs = read_subs(src_dir + 'phonograph_display_subs.txt')
 
 print('processing ufo files')
@@ -139,15 +140,12 @@ for char in forest.dict:
     if char is None or forest.dict[char].type != 'reg': continue
     map_to_char_and_glyph = forest.dict[char].find_substitution_glyph(forest, displayed_chars.dict, not_displayed_chars.dict, subs, ufo.unicodeData.glyphNameForUnicode, missing_glyphs, False) # is_BMP)
     if map_to_char_and_glyph is None: continue
-    map_to_char, map_to_glyph_name = map_to_char_and_glyph
+    map_to_char, map_to_glyph_name, phonographeme_char = map_to_char_and_glyph
     original_glyph_name = ufo.unicodeData.glyphNameForUnicode(ord(char))
-    if original_glyph_name is not None and map_to_glyph_name != original_glyph_name:
-        original_glyph_name_unicodes = ufo[original_glyph_name].unicodes
-        original_glyph_name_unicodes.remove(ord(char))
-        ufo[original_glyph_name].unicodes = original_glyph_name_unicodes
-        map_to_glyph_name_unicodes = ufo[map_to_glyph_name].unicodes
-        map_to_glyph_name_unicodes.append(ord(char))
-        ufo[map_to_glyph_name].unicodes = map_to_glyph_name_unicodes
+    if map_to_glyph_name != original_glyph_name and phonographeme_char != char: # for chars in not_displayed and chars being subbed, they themselves shall display the original glyphs, only their subordinates should be affected by respective modifications
+        if original_glyph_name is not None:
+            l = ufo[original_glyph_name].unicodes; l.remove(ord(char)); ufo[original_glyph_name].unicodes = l
+        l = ufo[map_to_glyph_name].unicodes; l.append(ord(char)); ufo[map_to_glyph_name].unicodes = l
     all_accounted_chars.add(char); all_displayed_chars.add(map_to_char)
 
 print('gathering unused glyphs')
