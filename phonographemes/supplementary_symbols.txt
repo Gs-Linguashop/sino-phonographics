@@ -1,12 +1,22 @@
 # These are the symbols used to serve grammatical, syntactic, and etymological functions. They are grouped and codified. 
 # Each symbol comes with an encoding, possibly a recommended unicode symbol, possibly a recommended character, and a description. 
 ########## Phonetic Supplement Diacritics for Chinese Phonograph Alphabet ##########
-01	°	口	syllable final h (or s), aspiration, fricative consonant, falling tone 
-02	^	丶	voiced consonant 
-03			syllable final glottal stop, rising tone 
+#####----- Consonant Voicing -----#####
+	˳˚˙		voiceless consonant, if there is no need of this mark, the ring symbol may be used to mark aspiration 
+	ˬˇ		voiced consonant 
+	ʰˢˆ		aspiration, syllable final h (or s), fricative consonant, falling tone, the circumflex symbol may be used to avoid Latin letters 
+	ʱ		non type 3 marker 
+#####----- Liquid & Palatal Approximant -----#####
+	ʲ╵		j, i, the vertical line symbol may be used to avoid Latin letters 
+	ʳ│˞		r, the rhoticity symbol may be used for r after vowels, the vertical line symbol may be used to avoid Latin letters 
+	ˡ╎		l, the vertical line symbol may be used to avoid Latin letters 
+#####----- Tones -----#####
+	ˀ		syllable final glottal stop, rising tone 
 ########## Phonetic Modifiers ##########
-10	‾		vowel lengthening 
-11	¨		vowel augmentation, umlaut 
+#####----- Vowels -----#####
+	ː		vowel lengthening 
+	¨		vowel augmentation, umlaut 
+	~		nasalization 
 ########## Noun Cases & Prepositions ##########
 20			nominative 
 21			topic of sentence 
@@ -21,27 +31,34 @@
 2a			instrumental 
 2b			state of accompany 
 ########## Grammatical Concepts ##########
+#####----- Number -----#####
 41			one, singular, indefinite article 
 42			two, dual 
 43			plural 
+#####----- Gender -----#####
 44			neuter 
 45			masculine 
 46			feminine 
-47			I (we), first person 
-48			you, second person 
-49			it (they) third person 
-4a			this, here 
-4b			that, there, abstract this, definite article 
-4c			that yonder, there over 
-50			past 
-51			present 
-52			future 
-53			indicative 
-54			imperative 
-55			interrogative 
-56			suggestive, let's 
-57			speculative 
-58			affirmative 
+#####----- Relations & Pronouns -----#####
+			I (we), first person 
+			you, second person 
+			it (they) third person, definite article 
+			what 
+			this 
+			abstract this, abstract that, definite article 
+			that 
+			this (main clause) 
+			which (subordinate clause) 
+#####----- Adverbials -----#####
+			past 
+			present 
+			future 
+			indicative 
+			imperative 
+			interrogative 
+			suggestive, let's 
+			speculative 
+			affirmative 
 ########## Logical & Relational Concepts ##########
 80		no, not 
 		yes 
