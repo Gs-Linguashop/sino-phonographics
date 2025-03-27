@@ -18,25 +18,25 @@
 	¨	vowel augmentation, umlaut 
 	~	nasalization 
 ########## Noun Cases & Prepositions ##########
-20		nominative 
-21		topic of sentence 
-22	↑	ergative, agent in passive constructions 
-23		vocative
-24	↓	accusative 
-25	'⊂⊃	genitive 
-26	↦↤	ablative 
-27	@⇣	locative 
-28	⇥⇤	lative 
-29	←→	dative 
-2a	⇴⋀	instrumental 
+		nominative 
+		topic of sentence 
+	↑	ergative, agent in passive constructions 
+		vocative
+	↓	accusative 
+	'⊂⊃	genitive 
+	↦↤	ablative 
+	@⇣	locative 
+	⇥⇤	lative 
+	←→	dative 
+	⥇⇴⋀	instrumental 
 	⇉⋀	state of accompany 
 	↛↚	without 
 	<>	than 
 ########## Grammatical Concepts ##########
 #####----- Number -----#####
-41	‧⁎	one, singular, indefinite article 
-42	⁚⁑	two, dual 
-43	⁝⁂	plural 
+	‧⁎	one, singular, indefinite article 
+	⁚⁑	two, dual 
+	⁝⁂	plural 
 #####----- Gender -----#####
 	⚥◇⚲⚪︎	neuter 
 	♀△○□	feminine 
@@ -52,9 +52,9 @@
 	◉◓○	this (main clause) 
 	◎◒◌	which (subordinate clause) 
 #####----- Adverbials -----#####
-	◧◃	past 
-	◫▫	present 
-	◨▹	future 
+	◃	past 
+	▫	present 
+	▹	future 
 		indicative 
 	!	imperative 
 	?	interrogative 
@@ -62,9 +62,9 @@
 		speculative 
 		affirmative 
 ########## Logical & Relational Concepts ##########
-80	¬⊥☒	no, not 
+	¬⊥☒✗✘	no, not 
 	∅	nothing 
-	⊤☑	yes 
+	⊤☑✓✔	yes 
 	&⋀	and 
 	‖⋁	or 
 	|	if 
@@ -81,22 +81,22 @@
 		inside 
 	∈	in 
 		outside 
-		on, on the surface of, on top of 
-		under 
+	∸	on, on the surface of, on top of 
+	⨪	under 
 	^‾	above 
 	_	beneath 
-	⇧	up
-	⇩	down 
+	⫠	up
+	⫟	down 
 	⇦	left 
 	⇨	right 
-		front 
-		behind 
+	⇧	front, forward 
+	⇩	behind, backward 
 	↩↪	back 
 	⁀	across 
-	˟	cross 
-		before 
-		during 
-		after 
+	⨯	cross 
+	↢	before 
+	~⥲	during 
+	↣	after 
 	⇄⇆↔	reciprocal 
 	↺↻	around 
 	~≈	about, approximate 
@@ -105,7 +105,7 @@
 	∀	all, each 
 	∃	there is 
 ########## Etymological Concepts ##########
-b0	⌅	active 
+	⌅	active 
 	⌆	causative, let 
 	⌃	neutral 
 	⌄	passive 
@@ -126,7 +126,7 @@ b0	⌅	active
 	~≈	like, similar to 
 	↛↚	without, -less 
 	≠	non- 
-		in the manner of, in the fashion of 
+	↝	in the manner of, in the fashion of 
 		noun to adjective 
 		adjective to adverb 
 		comparative 
