@@ -2,7 +2,7 @@
 # Each symbol comes with an encoding, possibly a recommended unicode symbol, possibly a recommended character, and a description. 
 ########## Phonetic Supplement Diacritics for Chinese Phonograph Alphabet ##########
 #####----- Consonant Voicing -----#####
-	˳˚˙	voiceless consonant, if there is no need of this mark, the ring symbol may be used to mark aspiration, place holder 
+	˳˚⸰˙	voiceless consonant, if there is no need of this mark, the ring symbol may be used to mark aspiration, place holder 
 	ˬˇ	voiced consonant 
 	ʰˢˆ	aspiration, syllable final h (or s), fricative consonant, falling tone, the circumflex symbol may be used to avoid Latin letters 
 	ʱ	non type 3 marker 
@@ -18,18 +18,18 @@
 	¨	vowel augmentation, umlaut 
 	~	nasalization 
 ########## Noun Cases & Prepositions ##########
-		nominative 
-		topic of sentence 
-	↑	ergative, agent in passive constructions 
-		vocative
-	↓	accusative 
+	•	nominative 
+	•	topic of sentence 
+	▴	ergative, agent in passive constructions 
+	◦	vocative
+	▾	accusative 
 	'⊂⊃	genitive 
-	↦↤	ablative 
+	↦↤↥	ablative 
 	@⇣	locative 
-	⇥⇤	lative 
+	⇥⇤⤓	lative 
 	←→	dative 
 	⥇⇴⋀	instrumental 
-	⇉⋀	state of accompany 
+	⇉⋀∥	state of accompany 
 	↛↚	without 
 	<>	than 
 ########## Grammatical Concepts ##########
@@ -100,7 +100,7 @@
 	⇄⇆↔	reciprocal 
 	↺↻	around 
 	~≈	about, approximate 
-	⇉	also 
+	⇉∥	also 
 	⇉	co-, con-, together 
 	∀	all, each 
 	∃	there is 
