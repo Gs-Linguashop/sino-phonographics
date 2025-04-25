@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>com.schriftgestaltung.appVersion</key>
-    <string>3337</string>
+    <string>3343</string>
     <key>com.schriftgestaltung.disablesAutomaticAlignment</key>
     <false/>
     <key>com.schriftgestaltung.formatVersion</key>
@@ -36,9 +36,11 @@
       <string>u23D92</string>
       <string>u24C07</string>
       <string>u26407</string>
+      <string>u26C29</string>
       <string>u27BAB</string>
       <string>u27D2A</string>
       <string>u27DD7.alt</string>
+      <string>u2B0B1</string>
       <string>u2B823</string>
       <string>u2B94E</string>
       <string>u2D546</string>
@@ -46,6 +48,10 @@
       <string>u30021</string>
       <string>u3005C</string>
       <string>u3054E</string>
+      <string>uniE000</string>
+      <string>uniE001</string>
+      <string>uniE002</string>
+      <string>uniE003</string>
     </array>
   </dict>
 </plist>
