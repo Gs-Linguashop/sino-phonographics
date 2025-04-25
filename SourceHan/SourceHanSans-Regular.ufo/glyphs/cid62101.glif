@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="cid62101" format="2">
+  <advance width="1000" height="1000"/>
+  <note>
+cid62101
+</note>
+  <outline>
+    <contour>
+      <point x="395" y="760" type="curve"/>
+      <point x="313" y="767" type="line"/>
+      <point x="293" y="480"/>
+      <point x="249" y="154"/>
+      <point x="35" y="-23" type="curve"/>
+      <point x="52" y="-37"/>
+      <point x="78" y="-65"/>
+      <point x="91" y="-80" type="curve"/>
+      <point x="316" y="111"/>
+      <point x="367" y="454"/>
+    </contour>
+    <contour>
+      <point x="645" y="766" type="curve"/>
+      <point x="569" y="761" type="line"/>
+      <point x="575" y="682"/>
+      <point x="600" y="153"/>
+      <point x="904" y="-79" type="curve"/>
+      <point x="920" y="-59"/>
+      <point x="945" y="-40"/>
+      <point x="971" y="-23" type="curve"/>
+      <point x="673" y="194"/>
+      <point x="649" y="698"/>
+    </contour>
+  </outline>
+</glyph>

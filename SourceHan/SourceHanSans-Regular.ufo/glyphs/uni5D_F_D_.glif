@@ -2,7 +2,6 @@
 <glyph name="uni5DFD" format="2">
   <advance width="1000" height="1000"/>
   <unicode hex="5DFD"/>
-  <unicode hex="2F884"/>
   <outline>
     <contour>
       <point x="185" y="-55"/>
@@ -120,4 +119,10 @@
       <point x="365" y="297" type="line"/>
     </contour>
   </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.lastChange</key>
+      <string>2025-04-25 03:14:18 +0000</string>
+    </dict>
+  </lib>
 </glyph>
