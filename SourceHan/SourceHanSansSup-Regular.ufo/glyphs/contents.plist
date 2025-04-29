@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
+    <key>u200A2</key>
+    <string>u200A_2.glif</string>
     <key>u200D3</key>
     <string>u200D_3.glif</string>
     <key>u20B1B</key>
@@ -68,5 +70,7 @@
     <string>uniE_002.glif</string>
     <key>uniE003</key>
     <string>uniE_003.glif</string>
+    <key>uniE004</key>
+    <string>uniE_004.glif</string>
   </dict>
 </plist>
