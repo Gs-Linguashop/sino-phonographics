@@ -6,10 +6,10 @@
     <contour>
       <point x="452" y="660" type="line"/>
       <point x="533" y="660" type="line"/>
-      <point x="533" y="505" type="line"/>
-      <point x="861" y="505" type="line"/>
-      <point x="861" y="204" type="line"/>
-      <point x="533" y="204" type="line"/>
+      <point x="533" y="508" type="line"/>
+      <point x="861" y="508" type="line"/>
+      <point x="861" y="205" type="line"/>
+      <point x="533" y="205" type="line"/>
       <point x="533" y="38" type="line"/>
       <point x="776" y="48" type="line"/>
       <point x="725" y="103"/>
@@ -26,22 +26,22 @@
       <point x="50" y="21" type="line"/>
       <point x="188" y="29"/>
       <point x="452" y="34" type="qcurve"/>
-      <point x="452" y="204" type="line"/>
-      <point x="128" y="204" type="line"/>
-      <point x="128" y="505" type="line"/>
-      <point x="452" y="505" type="line"/>
+      <point x="452" y="205" type="line"/>
+      <point x="128" y="205" type="line"/>
+      <point x="128" y="508" type="line"/>
+      <point x="452" y="508" type="line"/>
     </contour>
     <contour>
-      <point x="452" y="274" type="line"/>
-      <point x="452" y="436" type="line"/>
-      <point x="204" y="436" type="line"/>
-      <point x="204" y="274" type="line"/>
+      <point x="452" y="275" type="line"/>
+      <point x="452" y="439" type="line"/>
+      <point x="204" y="439" type="line"/>
+      <point x="204" y="275" type="line"/>
     </contour>
     <contour>
-      <point x="780" y="274" type="line"/>
-      <point x="780" y="436" type="line"/>
-      <point x="533" y="436" type="line"/>
-      <point x="533" y="274" type="line"/>
+      <point x="780" y="275" type="line"/>
+      <point x="780" y="439" type="line"/>
+      <point x="533" y="439" type="line"/>
+      <point x="533" y="275" type="line"/>
     </contour>
     <contour>
       <point x="872" y="787" type="line"/>
@@ -51,8 +51,8 @@
       <point x="746" y="592" type="line"/>
       <point x="789" y="637"/>
       <point x="821" y="704" type="qcurve"/>
-      <point x="114" y="704" type="line"/>
-      <point x="114" y="781" type="line"/>
+      <point x="104" y="704" type="line"/>
+      <point x="104" y="781" type="line"/>
       <point x="845" y="781" type="line"/>
       <point x="845" y="783" type="line"/>
       <point x="859" y="783" type="line"/>
@@ -61,7 +61,7 @@
   <lib>
     <dict>
       <key>com.schriftgestaltung.Glyphs.lastChange</key>
-      <string>2025-05-01 02:58:50 +0000</string>
+      <string>2025-05-02 01:33:04 +0000</string>
     </dict>
   </lib>
 </glyph>
