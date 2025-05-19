@@ -120,6 +120,11 @@
     <integer>1100</integer>
     <key>openTypeOS2WinDescent</key>
     <integer>300</integer>
+    <key>postscriptBlueValues</key>
+    <array>
+      <integer>0</integer>
+      <integer>0</integer>
+    </array>
     <key>postscriptFontName</key>
     <string>SourceHanSans-Regular</string>
     <key>postscriptUnderlinePosition</key>
