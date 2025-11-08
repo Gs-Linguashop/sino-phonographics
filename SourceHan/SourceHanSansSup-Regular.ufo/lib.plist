@@ -2,39 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
-    <key>com.schriftgestaltung.DisplayStrings</key>
-    <array>
-      <string>𰁜</string>
-    </array>
     <key>com.schriftgestaltung.appVersion</key>
     <string>3414</string>
     <key>com.schriftgestaltung.disablesAutomaticAlignment</key>
     <false/>
     <key>com.schriftgestaltung.formatVersion</key>
     <integer>3</integer>
-    <key>com.schriftgestaltung.glyphOrder</key>
-    <array>
-      <string>u200D3</string>
-      <string>u20B24</string>
-      <string>u226A9</string>
-      <string>u27DD7</string>
-    </array>
+    <key>com.schriftgestaltung.useGlyphOrder</key>
+    <false/>
     <key>com.schriftgestaltung.useNiceNames</key>
     <false/>
     <key>public.glyphOrder</key>
     <array>
-      <string>u200D3</string>
-      <string>u20B24</string>
-      <string>u226A9</string>
-      <string>u27DD7</string>
       <string>uni5903.alt</string>
       <string>u200A2</string>
+      <string>u200D3</string>
+      <string>u20A7A</string>
       <string>u20B1B</string>
+      <string>u20B24</string>
       <string>u20B36</string>
       <string>u20BD1</string>
       <string>u21569</string>
       <string>u22016</string>
       <string>u221C7</string>
+      <string>u226A9</string>
       <string>u22EFB</string>
       <string>u22F38</string>
       <string>u23386</string>
@@ -45,6 +36,7 @@
       <string>u26C29</string>
       <string>u27BAB</string>
       <string>u27D2A</string>
+      <string>u27DD7</string>
       <string>u27DD7.alt</string>
       <string>u2B0B1</string>
       <string>u2B823</string>
