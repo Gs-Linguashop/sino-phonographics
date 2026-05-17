@@ -118,6 +118,7 @@ read_dict(src_dir + 'phonograph_dict.txt', forest, dup_chars, mode = 'init')
 read_dict(src_dir + 'phonograph_rare.txt', forest, dup_chars, mode = 'init')
 read_dict(src_dir + 'phonograph_hierarchy.txt', forest, dup_chars, mode = 'mod')
 read_dict(src_dir + 'phonograph_relation_mod.txt', forest, dup_chars, mode = 'mod')
+read_dict(src_dir + 'phonograph_relation_mod_rare.txt', forest, dup_chars, mode = 'mod')
 displayed_chars = Forest(); read_dict(src_dir + 'phonograph_displayed.txt', displayed_chars, None, mode = 'init')
 not_displayed_chars = Forest(); read_dict(src_dir + 'phonograph_not_displayed.txt', not_displayed_chars, None, mode = 'init')
 subs = read_subs(src_dir + 'phonograph_display_subs.txt')
@@ -136,6 +137,7 @@ for glyph in ufo_sup:
 print('substituting glyph maps')
  
 all_accounted_chars = set(); all_displayed_chars = set(); missing_glyphs = set()
+mappings = dict()
 for char in forest.dict:
     if char is None or forest.dict[char].type != 'reg': continue
     map_to_char_and_glyph = forest.dict[char].find_substitution_glyph(forest, displayed_chars.dict, not_displayed_chars.dict, subs, ufo.unicodeData.glyphNameForUnicode, missing_glyphs, False) # is_BMP)
@@ -147,6 +149,7 @@ for char in forest.dict:
             l = ufo[original_glyph_name].unicodes; l.remove(ord(char)); ufo[original_glyph_name].unicodes = l
         l = ufo[map_to_glyph_name].unicodes; l.append(ord(char)); ufo[map_to_glyph_name].unicodes = l
     all_accounted_chars.add(char); all_displayed_chars.add(map_to_char)
+    mappings.setdefault(map_to_char, list()).append(char)
 
 print('gathering unused glyphs')
 with open(font_path + '/features.fea',"r",encoding="utf8") as f: features = f.read()
@@ -166,6 +169,8 @@ with open(log_dir + 'chars_covered.txt',"w",encoding="utf8") as f:
     f.write('\n'.join(sorted(all_accounted_chars)))
 with open(log_dir + 'chars_displayed.txt',"w",encoding="utf8") as f:
     f.write('\n'.join(sorted(all_displayed_chars)))
+with open(log_dir + 'compiled_mappings.txt',"w",encoding="utf8") as f:
+    f.write('\n'.join(sorted([f"{key}\t{''.join(sorted(item))}" for key, item in mappings.items()])))
 
 print('compiling ufo to ttf/otf')
 font = compileTTF(ufo)
